@@ -171,7 +171,28 @@
 </nav>
 {{> yield }}
 {{ else }}
-login
+<section class="section">
+  <div class="container">
+    <form class="login">
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" type="email" placeholder="jon@doe.com" required>
+        </div>
+        <p class="help">Enter your email. Must be authorized staff.</p>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input" type="password" placeholder="abc123" required>
+        </div>
+        <p class="help">If you forgot your password click here.</p>
+      </div>
+      <a class="button is-info" width="100%" type="submit" >Login</a>
+    </form>
+  </div>
+</section>
+{{>register}}
         {{/if}}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </body>
