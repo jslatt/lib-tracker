@@ -17,18 +17,6 @@
       <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
     </a>
 
-    <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
-      <span class="icon" style="color: #333;">
-        <i class="fa fa-github"></i>
-      </span>
-    </a>
-
-    <a class="navbar-item is-hidden-desktop" href="https://twitter.com/jgthms" target="_blank">
-      <span class="icon" style="color: #55acee;">
-        <i class="fa fa-twitter"></i>
-      </span>
-    </a>
-
     <div class="navbar-burger burger" data-target="navMenuTransparentExample">
       <span></span>
       <span></span>
@@ -62,6 +50,10 @@
           </div>
         </div>
       </div>
+</div>
+
+
+    <div class="navbar-end">
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link " href="http://bulma.io/blog/">
           Blog
@@ -122,77 +114,44 @@
           </div>
         </div>
       </div>
-      <div class="navbar-item has-dropdown is-hoverable">
-        <div class="navbar-link">
-          More
-        </div>
-        <div id="moreDropdown" class="navbar-dropdown is-boxed">
-          <a class="navbar-item " href="http://bulma.io/extensions/">
-            <div class="level is-mobile">
-              <div class="level-left">
-                <div class="level-item">
-                  <p>
-                    <strong>Extensions</strong>
-                    <br>
-                    <small>Side projects to enhance Bulma</small>
-                  </p>
-                </div>
-              </div>
-              <div class="level-right">
-                <div class="level-item">
-                  <span class="icon has-text-info">
-                    <i class="fa fa-plug"></i>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <a class="navbar-item " href="http://bulma.io/expo/">
-        <span class="emoji">🎨</span>
-        Expo
-      </a>
-      <a class="navbar-item " href="http://bulma.io/love/">
-        <span class="emoji">❤️</span>
-        Love
-      </a>
     </div>
-
-    <div class="navbar-end">
-      <a class="navbar-item is-hidden-desktop-only" href="https://github.com/jgthms/bulma" target="_blank">
-        Github
-      </a>
-      <a class="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank">
-        Twitter
-      </a>
-    </div>
-  </div>
+  
+</div>
 </nav>
 {{> yield }}
 {{ else }}
+<section class="hero is-info is-bold">
+            <div class="hero-body">
+                <div class="container is-widescreen">
+                    <h1 class="title">
+                       Login to Access Dashboard
+                    </h1>
+                </div>
+            </div>
+        </section>
 <section class="section">
   <div class="container">
-    <form class="login">
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-          <input class="input" type="email" placeholder="jon@doe.com" required>
+    <div class="column is-offset-4 is-4">
+      <form class="login">
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="jon@doe.com" required>
+          </div>
+          <p class="help">Enter your email. Must be authorized staff.</p>
         </div>
-        <p class="help">Enter your email. Must be authorized staff.</p>
-      </div>
-      <div class="field">
-        <label class="label">Password</label>
-        <div class="control">
-          <input class="input" type="password" placeholder="abc123" required>
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="abc123" required>
+          </div>
+          <p class="help">If you forgot your password <a href="#" title="Forgot Password">click here</a>.</p>
         </div>
-        <p class="help">If you forgot your password click here.</p>
-      </div>
-      <a class="button is-info" width="100%" type="submit" >Login</a>
-    </form>
+        <a class="button is-info" style="width:100%;" type="submit" >Login</a>
+      </form>
+    </div>
   </div>
 </section>
-{{>register}}
         {{/if}}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </body>
