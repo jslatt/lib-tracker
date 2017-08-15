@@ -31,6 +31,17 @@ Template.register.events({
     //let role =
     let email = $('[name="email"]').val();
     let password = $('[name="password"]').val();
-    Accounts.createUser({email: email, password : password});
+
+    // Check for Empty Fields
+    if ( firstName.length() < 1 && lastName.length() < 1 && email.length() < 1 && password.length() < 1) {
+      console.log("You left a field empty")
+    }
+    else {
+      Accounts.createUser({email: email, password : password},
+        if(err) {
+          console.log(err);
+        }
+      );
+    }
   }
 });
