@@ -1,5 +1,5 @@
-// By: James Slattery
-
+// By James Slattery (james@slattery.tech)
+// For 2017-18 FBlA Season
 
 // Login Logic
 Template.base.events({
@@ -18,7 +18,6 @@ Template.base.events({
     Meteor.loginWithPassword(email, password);
   }
 })
-
 
 
 // Register Logic
