@@ -13,20 +13,17 @@ Develop a database program to manage the issuance of books at a school library. 
 
 ---
 
-### DB Schema
+### To Do's
+- [ ] Localize Bluma CSS & FA Icons & jQuery
+- [ ] Build Alpha :D
+- [ ] Color scheme & logo
 
-- Users
-- - First Name
-- - Last Name
-- - Books Out
 
-- Roles
-- - Student
-- - Teacher
-- - Librarian
-
+### Extras
+- [ ] Import new Students and Teachers form CSV (Excel)
 
 ---
+
 
 ### Technologies Used
 
