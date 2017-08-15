@@ -8,12 +8,13 @@ Template.base.events({
     let password = $('[name="password"]').val();
 
     if ( email.length() < 1 ) {
+      // add actual alert
       console.log("Email Required");
     }
     if ( password.length() < 1) {
+      // ^^
       console.log("Password Required");
     }
-
 
     Meteor.loginWithPassword(email, password);
   }
@@ -24,11 +25,12 @@ Template.base.events({
 Template.register.events({
   'submit .register': function () {
     event.preventDefault();
-    //let firstName = $('[name="firstName"]').val();
-    //let lastName = $('[name="lastName"]').val();
+    let firstName = $('[name="firstName"]').val();
+    let lastName = $('[name="lastName"]').val();
+    let booksOut = 0;
+    //let role =
     let email = $('[name="email"]').val();
     let password = $('[name="password"]').val();
-    // let role (need to config)
     Accounts.createUser({email: email, password : password});
   }
 });
