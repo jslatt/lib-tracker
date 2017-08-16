@@ -1,1 +1,6 @@
 /* CSS declarations go here */
+.bar {
+    width: 100%;
+    height: 11px;
+    background-color: #3273dc;
+}

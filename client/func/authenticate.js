@@ -3,21 +3,20 @@
 
 // Login Logic
 Template.base.events({
-  'submit .login': function () {
-    let email = $('[name="email"]').val();
-    let password = $('[name="password"]').val();
+    'submit .login': function () {
 
-    if ( email.length() < 1 ) {
-      // add actual alert
-      console.log("Email Required");
-    }
-    if ( password.length() < 1) {
-      // ^^
-      console.log("Password Required");
-    }
+        event.preventDefault();
+        var email = $('[name="email"]').val();
+        var password = $('[name="password"]').val();
 
-    Meteor.loginWithPassword(email, password);
-  }
+
+        Meteor.loginWithPassword(email, password);
+    },
+
+    // Logout Logic
+    'click .logout': function () {
+        Meteor.logout();
+    }
 })
 
 
@@ -25,23 +24,15 @@ Template.base.events({
 Template.register.events({
   'submit .register': function () {
     event.preventDefault();
-    let firstName = $('[name="firstName"]').val();
-    let lastName = $('[name="lastName"]').val();
-    let booksOut = 0;
-    //let role =
     let email = $('[name="email"]').val();
     let password = $('[name="password"]').val();
 
     // Check for Empty Fields
-    if ( firstName.length() < 1 && lastName.length() < 1 && email.length() < 1 && password.length() < 1) {
+    if (email.length() < 1 && password.length() < 1) {
       console.log("You left a field empty")
     }
     else {
-      Accounts.createUser({email: email, password : password},
-        if(err) {
-          console.log(err);
-        }
-      );
+      Accounts.createUser({email: email, password : password});
     }
   }
 });

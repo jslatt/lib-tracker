@@ -1,4 +1,4 @@
-<template name="base">
+﻿<template name="base">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,17 +10,18 @@
     </head>
     <body>
         {{#if currentUser }}
-        <nav class="navbar is-transparent">
+<div class="bar"></div>
+<nav class="navbar is-transparent">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <img src="logo.png" alt="Logo" width="112" height="28">
+      <h1 style="font-weight: 700;" >BookTrack</h1>
     </a>
   </div>
 
   <div class="navbar-menu">
     <div class="navbar-start">
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link  is-active" href="">
+        <a class="navbar-link" href="">
           Users
         </a>
         <div class="navbar-dropdown is-boxed">
@@ -43,7 +44,7 @@
         </div>
       </div>
       <div class="navbar-item">
-        <a href="">
+        <a href="/b">
           Books
         </a>
       </div>
@@ -100,18 +101,18 @@
         <div class="field">
           <label class="label">Email</label>
           <div class="control">
-            <input class="input" type="email" placeholder="jon@doe.com" required>
+            <input class="input email" type="email" name="email" placeholder="jon@doe.com">
           </div>
           <p class="help">Enter your email. Must be authorized staff.</p>
         </div>
         <div class="field">
           <label class="label">Password</label>
           <div class="control">
-            <input class="input" type="password" placeholder="abc123" required>
+            <input class="input password" type="password" name="password" placeholder="abc123">
           </div>
           <p class="help">If you forgot your password <a href="#" title="Forgot Password">click here</a>.</p>
         </div>
-        <a class="button is-info" style="width:100%;" type="submit" >Login</a>
+        <button class="button is-info" style="width:100%;" type="submit" >Login</button>
       </form>
     </div>
   </div>

@@ -1,0 +1,64 @@
+<template name="books_add">
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Add a Books
+                </h1>
+                <h2 class="subtitle">
+                    Adding books will allow for you to rent these books to Students and Teachers.
+                </h2>
+            </div>
+        </div>
+        <div class="hero-foot">
+            <nav class="tabs is-boxed is-fullwidth">
+                <div class="container">
+                    <ul>
+                        <li><a href="/b">View Books</a></li>
+                        <li class="is-active"><a href="/b/add">Add Book</a></li>
+                        <li><a>Stock Alerts</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <form class="new_book">
+                <div class="field">
+                    <label class="label">Title</label>
+                    <div class="control">
+                        <input class="input" name="title" type="text" placeholder="The Grapes of Wrath">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Author</label>
+                    <div class="control">
+                        <input class="input" name="author" type="text" placeholder="John Steinbeck">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Description of Book (supports markdown)</label>
+                    <div class="control">
+                        <textarea class="textarea desc" placeholder="The Grapes of Wrath is an American realist novel written by John Steinbeck and published in 1939. The book won the National Book Award and Pulitzer Prize for fiction, and it was cited prominently when Steinbeck was awarded the Nobel Prize in 1962. "></textarea>
+                    </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control" style="width: 50%">
+                        <label class="label">Available Stock</label>
+                        <input class="input"  name="stock" type="number" placeholder="100">
+                    </div>
+                    <div class="control" style="width: 50%">
+                        <label class="label">Cover Image URL</label>
+                         <input class="input"  name="cover" type="url" placeholder="https://booksinc.com/grapesofwrath/book_cover.png">
+                        </div>
+                    </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" style="width: 100%;" type="submit">Add Book</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</template>

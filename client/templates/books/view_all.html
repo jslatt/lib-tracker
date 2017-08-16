@@ -1,0 +1,53 @@
+<template name="books_view_all">
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    View All Books
+                </h1>
+                <h2 class="subtitle">
+                    An aera to add, view, and modify books.
+                </h2>
+            </div>
+        </div>
+        <div class="hero-foot">
+            <nav class="tabs is-boxed is-fullwidth">
+                <div class="container">
+                    <ul>
+                        <li class="is-active"><a href="/b">View Books</a></li>
+                        <li><a href="/b/add">Add Book</a></li>
+                        <li><a>Stock Alerts</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-4">Books</h2>
+            {{#each all_books }}
+            <div class="column is-3" style="float: left;">
+                <div class="card" onclick="location.replace('/b/{{_id}}');" style="cursor: pointer;">
+                    <div class="card-image" style="background-image: url('{{cover}}');background-size: cover;background-position: center; ">
+                        <figure class="image is-2by1">
+                           
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-5">{{title}}</p>
+                                <p class="subtitle is-6">{{author}} left</p>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                           <small>{{stock}} book's left.</small>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            {{/each}}
+        </div>
+    </section>
+</template>

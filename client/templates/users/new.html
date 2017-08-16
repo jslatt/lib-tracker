@@ -14,33 +14,38 @@
           </section>
           <section class="section">
             <div class="container">
-              <form class="register">
-                <div class="field">
-                  <label class="label">First Name</label>
-                  <div class="control">
-                    <input class="input" type="text" name="firstName" placeholder="Jon" >
+              <div class="columns">
+                  <div class="column is-6 is-offset-3">
+                      <form class="register">
+                          <div class="field">
+                              <label class="label">First Name</label>
+                              <div class="control">
+                                  <input class="input" type="text" name="firstName" placeholder="Jon">
+                              </div>
+                              <p class="help">Student or Teacher's first name.</p>
+                          </div>
+                          <div class="field">
+                              <label class="label">Last Name</label>
+                              <div class="control">
+                                  <input class="input" type="text" name="lastName" placeholder="Doe">
+                              </div>
+                              <p class="help">Student or Teacher's last name.</p>
+                          </div>
+                          <div class="field">
+                              <div class="control">
+                                  <div class="select">
+                                      <select>
+                                          <option value="Student">Student</option>
+                                          <option value="Teacher">Teacher</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <p class="help">Define if the new user is a Studnet or Teacher. This will change the amount of books they can rent and the length they can rent them for.</p>
+                          </div>
+                          <button class="button is-info" width="100%" type="submit">Create User</button>
+                      </form>
                   </div>
-                  <p class="help">Student or Teacher's first name.</p>
-                </div>
-                <div class="field">
-                  <label class="label">Last Name</label>
-                  <div class="control">
-                    <input class="input" type="text" name="lastName" placeholder="Doe" >
-                  </div>
-                  <p class="help">Student or Teacher's last name.</p>
-                </div>
-                <div class="field">
-                  <label class="label">Student / Teacher</label>
-                  <div class="control">
-                    <select>
-                      <option value="Student">Student</option>
-                      <option value="Teacher">Teacher</option>
-                    </select>
-                  </div>
-                  <p class="help">Define if the new user is a Studnet or Teacher. This will change the amount of books they can rent and the length they can rent them for.</p>
-                </div>
-                <button class="button is-info" width="100%" type="submit" >Create User</button>
-              </form>
+              </div>
             </div>
           </section>
 </template>
