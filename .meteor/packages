@@ -25,3 +25,6 @@ accounts-base
 accounts-password
 aldeed:collection2-core
 meteortoys:allthings
+easy:search
+easysearch:autosuggest
+easysearch:elasticsearch

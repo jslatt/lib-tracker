@@ -31,38 +31,94 @@
             <div class="column is-3">
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input class="input" type="text" placeholder="Search...">
+                        {{> EasySearch.Input index=index attributes=inputAttributes }}
                         <span class="icon is-small is-left">
                             <i class="fa fa-search"></i>
                         </span>
                     </p>
+                    <script>
+                        $('input').addClass('input');
+                    </script>
                 </div>
             </div>
             </div>
             
-            {{#each all_books }}
-            <div class="column is-3" style="float: left;">
-                <div class="card" onclick="location.replace('/b/{{_id}}');" style="cursor: pointer;">
-                    <div class="card-image" style="background-image: url('{{cover}}');background-size: cover;background-position: center; ">
-                        <figure class="image is-2by1">
-                           
-                        </figure>
-                    </div>
-                    <div class="card-content">
-                        <div class="media">
-                            <div class="media-content">
-                                <p class="title is-5">{{title}}</p>
-                                <p class="subtitle is-6">{{author}} left</p>
-                            </div>
-                        </div>
+            {{#EasySearch.IfInputEmpty index=index }}
+                {{#each all_books }}
+                    <div class="column is-3" style="float: left;">
+                        <a href="/b/{{_id}}"><div class="card" style="cursor: pointer;">
+                            <div class="card-image" style="background-image: url('{{cover}}');background-size: cover;background-position: center; ">
+                                <figure class="image is-2by1">
 
-                        <div class="content">
-                           <small>{{stock}} book's left.</small>
-                        </div>
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-content">
+                                        <p class="title is-5">{{title}}</p>
+                                        <p class="subtitle is-6">{{author}} left</p>
+                                    </div>
+                                </div>
+
+                                <div class="content">
+                                    <small>{{stock}} book's left.</small>
+                                </div>
+                            </div>
+                        </div></a>
                     </div>
-                </div>
-                </div>
-            {{/each}}
+                    {{/each}}
+
+                    
+            {{else}}
+
+            <ol>
+                {{#EasySearch.Each index=index }}
+                {{> user}}
+                {{/EasySearch.Each}}
+            </ol>
+            {{#EasySearch.IfNoResults index=index }}
+            No Books found
+            {{else}}
+            {{/EasySearch.IfNoResults}}
+            
+
+            {{/EasySearch.IfInputEmpty}}
+
+            {{#EasySearch.IfSearching index=index }}
+            Searching...
+            {{/EasySearch.IfSearching}}
+
+           
+
+                 
+            
+            
         </div>
     </section>
+</template>
+
+<template name="user">
+    <div class="column is-3" style="float: left;">
+        <a href="/b/{{__originalId}}">
+            <div class="card" style="cursor: pointer;">
+                <div class="card-image" style="background-image: url('{{cover}}');background-size: cover;background-position: center; ">
+                    <figure class="image is-2by1">
+
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-5">{{title}}</p>
+                            <p class="subtitle is-6">{{author}} left</p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <small>{{stock}} book's left.</small>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
 </template>

@@ -26,6 +26,6 @@ Template.new_user.events({
 
 Template.users__all.helpers({
     all_users : function () {
-        return clients.find({});
+        return clients.find({}, { limit: 50 });
     }
 });
