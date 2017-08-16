@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\client",
+    "\\client\\func",
+    "\\client\\func\\books",
+    "\\client\\templates",
+    "\\client\\templates\\users",
+    "\\lib"
+  ],
+  "SelectedNode": "\\client\\func\\users.js",
+  "PreviewInSolutionExplorer": false
+}

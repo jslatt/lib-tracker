@@ -10,26 +10,29 @@
                             <article class="tile is-child notification is-primary">
                                 <p class="title">Counts</p>
                                 <p><strong>Total Books</strong> {{book__count}}</p>
+                                <p><strong>Total Users</strong> {{user__count}}</p>
                             </article>
                             <article class="tile is-child notification is-warning">
-                                <p class="title">...tiles</p>
-                                <p class="subtitle">Bottom tile</p>
+                                <p class="title">Fines</p>
+                                <p class="subtitle">There are {{user__fines}} students with unpaid fines.</p>
+                                <p><a>Student Fines Report</a></p>
                             </article>
                         </div>
                         <div class="tile is-parent">
                             <article class="tile is-child notification is-info">
-                                <p class="title">Middle tile</p>
-                                <p class="subtitle">With an image</p>
-                                <figure class="image is-4by3">
-                                    <img src="http://bulma.io/images/placeholders/640x480.png">
-                                </figure>
+                                <p class="title">Recent Rentals</p>
+                                <ul>
+                                    <li><a href="">Book Rental</a></li>
+                                    <li><a href="">Book Rental</a></li>
+                                </ul>
+
                             </article>
                         </div>
                     </div>
                     <div class="tile is-parent">
                         <article class="tile is-child notification is-danger">
-                            <p class="title">Wide tile</p>
-                            <p class="subtitle">Aligned with the right tile</p>
+                            <p class="title">Something</p>
+                            <p class="subtitle">Put something here!</p>
                             <div class="content">
                                 <!-- Content -->
                             </div>
@@ -39,10 +42,28 @@
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-success">
                         <div class="content">
-                            <p class="title">Tall tile</p>
-                            <p class="subtitle">With even more content</p>
+                            <p class="title">Quck Rent</p>
+                            <p class="subtitle">Enter the User and Book to quick rent. (barcode scanner)</p>
                             <div class="content">
-                                <!-- Content -->
+                                <form>
+                                    <div class="field">
+                                        <label class="label c_label">Scan Student ID</label>
+                                        <div class="control">
+                                            <input class="input u_green" type="text" placeholder="sx4Jie9kXShEQ5k44">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label class="label c_label">Scan Book ID</label>
+                                        <div class="control">
+                                            <input class="input u_green" type="text" placeholder="jf6csxjoazZusdfaS">
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <button type="submit" style="width: 100%;" class="button is-inverted is-outlined">Rent</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </article>

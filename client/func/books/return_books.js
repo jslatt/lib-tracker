@@ -3,3 +3,9 @@ Template.books_view_all.helpers({
         return books.find({});
     }
 });
+
+Template.book_stock.helpers({
+    book_stock: function () {
+        return books.find({ stock: { $lt: 20 } });
+    }
+});

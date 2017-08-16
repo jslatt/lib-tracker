@@ -2,24 +2,27 @@
 <section class="section">
     <div class="container">
     {{#each all_users }}
-        <div class="box">
-            <article class="media">
-                <div class="media-left">
-                    <figure class="image is-64x64">
-                        <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
-                    </figure>
-                </div>
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <strong>{{firstName}} {{lastName}}</strong> <small>{{role}}</small> <small>{{booksOut}}</small>
-                            <br>
-                        </p>
+        <div class="column is-3" style="float: left;">
+            <div class="box">
+                <article class="media">
+                    <div class="media-left">
+                        <figure class="image is-64x64">
+                            <i class="fa fa-user-o" style="font-size: 56px;" aria-hidden="true"></i>
+                        </figure>
                     </div>
-                </div>
-            </article>
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>{{firstName}} {{lastName}}</strong> <small>{{role}}</small>
+                                <br>
+                                <span class="tag is-primary">{{booksOut}} Books Out</span>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            </div>
+            {{/each}}
         </div>
-    {{/each}}
-    </div>
 </section>
 </template>

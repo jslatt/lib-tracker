@@ -1,12 +1,12 @@
-<template name="books_view_all">
+<template name="book_stock">
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    View All Books
+                    Stock Alerts
                 </h1>
                 <h2 class="subtitle">
-                    An aera to add, view, and modify books.
+                    Here are all the books for which you are low on inventory.
                 </h2>
             </div>
         </div>
@@ -14,9 +14,9 @@
             <nav class="tabs is-boxed is-fullwidth">
                 <div class="container">
                     <ul>
-                        <li class="is-active"><a href="/b">View Books</a></li>
+                        <li><a href="/b">View Books</a></li>
                         <li><a href="/b/add">Add Book</a></li>
-                        <li><a href="/b/stock">Stock Alerts</a></li>
+                        <li class="is-active"><a href="/b/stock">Stock Alerts</a></li>
                     </ul>
                 </div>
             </nav>
@@ -24,28 +24,14 @@
     </section>
     <section class="section">
         <div class="container">
-            <div class="columns">
-                <div class="column is-1">
-                    <h2 class="title is-4">Books</h2>
-                </div>
-            <div class="column is-3">
-                <div class="field">
-                    <p class="control has-icons-left">
-                        <input class="input" type="text" placeholder="Search...">
-                        <span class="icon is-small is-left">
-                            <i class="fa fa-search"></i>
-                        </span>
-                    </p>
-                </div>
-            </div>
-            </div>
-            
-            {{#each all_books }}
+            <h2 class="title is-4">Books Low Stock</h2>
+
+            {{#each book_stock }}
             <div class="column is-3" style="float: left;">
                 <div class="card" onclick="location.replace('/b/{{_id}}');" style="cursor: pointer;">
                     <div class="card-image" style="background-image: url('{{cover}}');background-size: cover;background-position: center; ">
                         <figure class="image is-2by1">
-                           
+
                         </figure>
                     </div>
                     <div class="card-content">
@@ -57,11 +43,11 @@
                         </div>
 
                         <div class="content">
-                           <small>{{stock}} book's left.</small>
+                            <span class="tag is-danger is-medium">{{stock}} Books Left</span>
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
             {{/each}}
         </div>
     </section>

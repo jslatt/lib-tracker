@@ -4,3 +4,16 @@
     height: 11px;
     background-color: #3273dc;
 }
+.u_green {
+    background: #10a644 !important;
+    border: none !important;
+    color: #fafafa !important;
+}
+
+.u_green::placeholder {
+    color: #fafafa !important;
+}
+
+.c_label {
+    color: #fafafa !important;
+}
