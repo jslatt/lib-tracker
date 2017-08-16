@@ -1,0 +1,25 @@
+<template name="users__all">
+<section class="section">
+    <div class="container">
+    {{#each all_users }}
+        <div class="box">
+            <article class="media">
+                <div class="media-left">
+                    <figure class="image is-64x64">
+                        <img src="http://bulma.io/images/placeholders/128x128.png" alt="Image">
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>{{firstName}} {{lastName}}</strong> <small>{{role}}</small> <small>{{booksOut}}</small>
+                            <br>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    {{/each}}
+    </div>
+</section>
+</template>

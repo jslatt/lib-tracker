@@ -3,3 +3,9 @@ Template.dashboard.helpers({
         return books.find({}).count();
     }
 });
+
+Template.base.helpers({
+    user__count: function () {
+        return clients.find({}).count();
+    }
+})

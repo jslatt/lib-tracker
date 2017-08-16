@@ -24,7 +24,22 @@
     </section>
     <section class="section">
         <div class="container">
-            <h2 class="title is-4">Books</h2>
+            <div class="columns">
+                <div class="column is-1">
+                    <h2 class="title is-4">Books</h2>
+                </div>
+            <div class="column is-3">
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="text" placeholder="Search...">
+                        <span class="icon is-small is-left">
+                            <i class="fa fa-search"></i>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            </div>
+            
             {{#each all_books }}
             <div class="column is-3" style="float: left;">
                 <div class="card" onclick="location.replace('/b/{{_id}}');" style="cursor: pointer;">
