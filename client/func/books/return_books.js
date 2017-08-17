@@ -26,14 +26,14 @@ Template.books_view_all.helpers({
 
 Template.user.helpers({
     selected: function () {
-        return Session.equals("selectedJoke", this.__originalId) ? "selected" : '';
+        return Session.equals("selectedBook", this.__originalId) ? "selected" : '';
     },
 
 })
 
 Template.user.events({
     'click': function () {
-        Session.set("selectedJoke", this.__originalId);
+        Session.set("selectedBook", this.__originalId);
     }
 })
 

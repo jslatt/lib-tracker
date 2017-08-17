@@ -3,7 +3,7 @@
     <div class="container">
     {{#each all_users }}
         <div class="column is-3" style="float: left;">
-            <div class="box">
+            <a href="/u/{{_id}}"><div class="box">
                 <article class="media">
                     <div class="media-left">
                         <figure class="image is-64x64">
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </article>
-            </div>
+            </div></a>
             </div>
             {{/each}}
         </div>

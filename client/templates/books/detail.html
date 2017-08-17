@@ -1,0 +1,85 @@
+<template name="book_detail">
+    <section class="hero" style="background-image: url('/book_header.png'); background-size: cover;">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title has-text-white">
+                    {{title}}
+                </h1>
+                <h2 class="subtitle has-text-white">
+                    {{author}}
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+         <div class="container">
+             <p class="title is-6">Stock Left <span class="tag is-primary">{{stock}}</span></p>
+             <div class="columns">
+                 <div class="column is-3">
+                     <img src="{{cover}}" alt="{{title}}" style="width: 80%;" />
+                 </div>
+                 <div class="column is-6">
+                     <p>{{description}}</p>
+                     <br/>
+                     <div>
+                         <h2 class="title is-4">Rent Book Out</h2>
+                         <div class="field">
+                             <p class="control has-icons-left">
+                                 {{> EasySearch.Input index=index attributes=inputAttributes }}
+                                 <span class="icon is-small is-left">
+                                     <i class="fa fa-search"></i>
+                                 </span>
+                             </p>
+                             <script>
+                        $('input').addClass('input');
+                             </script>
+                         </div>
+                         {{#EasySearch.IfInputEmpty index=index }}
+                            
+                         {{else}}
+
+                         <ol>
+                             {{#EasySearch.Each index=index }}
+                             {{> user_b }}
+                             {{/EasySearch.Each}}
+                         </ol>
+                         {{#EasySearch.IfNoResults index=index }}
+                         No Users found
+                         {{else}}
+                         {{/EasySearch.IfNoResults}}
+
+
+                         {{/EasySearch.IfInputEmpty}}
+
+                         {{#EasySearch.IfSearching index=index }}
+                         Searching...
+                         {{/EasySearch.IfSearching}}
+                     </div>
+                 </div>
+             </div>
+         </div>
+    </section>
+</template>
+
+<template name="user_b">
+    <div class="column is-6" style="float: left;">
+        <div class="box">
+            <article class="media">
+                <div class="media-left">
+                    <figure class="image is-24x24">
+                        <i class="fa fa-user-o" style="font-size: 24px;" aria-hidden="true"></i>
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>{{firstName}} {{lastName}}</strong> <small>{{role}}</small>
+                            <br>
+                            <span class="tag is-primary">{{booksOut}} Books Out</span>&nbsp;<span class="tag is-success rent" style="cursor: pointer;">Rent</span>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</template>

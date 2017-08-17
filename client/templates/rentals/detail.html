@@ -1,0 +1,24 @@
+<template name="rental_detail">
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    {{ name }}
+                </h1>
+                <h2 class="subtitle">
+                    {{book_name}}
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-5">Rental Details</h2>
+            <p>{{#if returned }}<span class="tag is-primary is-medium is-outlined">Returned</span>{{else}}<span class="tag is-success mar is-medium" style="cursor:pointer;">Mark As Returned</span>{{/if}}</p>
+            <br/>
+            <p><strong>Rental Length</strong> {{length}} days's</p>
+            <p><strong>Rented On</strong> {{date}}</p>
+            <p><strong>Status</strong> {{#if returned }}Returned{{else}}Out{{/if}}</p>
+        </div>
+    </section>
+</template>

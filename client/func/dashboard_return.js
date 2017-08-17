@@ -5,6 +5,9 @@ Template.dashboard.helpers({
     user__count: function () {
         return clients.find({}).count();
     },
+    recent_rentals: function () {
+        return rentals.find({ returned: false }, { limit: 10 });
+    },
     user__fines: function () {
         return clients.find({ fines: { $gt: 0 } }).count();
     }

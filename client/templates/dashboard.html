@@ -22,8 +22,11 @@
                             <article class="tile is-child notification is-info">
                                 <p class="title">Recent Rentals</p>
                                 <ul>
-                                    <li><a href="">Book Rental</a></li>
-                                    <li><a href="">Book Rental</a></li>
+                                    {{#each recent_rentals}}
+                                    <li><a href="/r/{{_id}}">{{book_name}}</a></li>
+                                    {{else}}
+                                    Nobody has rented a book recently :(
+                                    {{/each}}
                                 </ul>
 
                             </article>
@@ -34,7 +37,7 @@
                             <p class="title">Need Help?</p>
                             <p class="subtitle">Read the FAQ here!</p>
                             <div class="content">
-                                <!-- Content -->
+                               <a>Renting a Book Out</a> \ <a>Diffrence Between Teacher & Student</a> \ <a>How to use the Quick Rental Feature</a>
                             </div>
                         </article>
                     </div>
