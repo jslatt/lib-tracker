@@ -15,15 +15,14 @@ Develop a database program to manage the issuance of books at a school library. 
 
 ### To Do's
 - [ ] Localize Bluma CSS & FA Icons & jQuery
-- [ ] Build Alpha :D
-- [ ] Color scheme & logo
-
-
-### Extras
-- [ ] Import new Students and Teachers form CSV (Excel)
+- [ ] Edit Users
+- [ ] Redirect users after form submission
+- [ ] Generate Reports
+- [ ] Create a default user when the system starts up
+- [ ] Chage user passwords
+- [ ] Add name on recent rentals
 
 ---
-
 
 ### Technologies Used
 
