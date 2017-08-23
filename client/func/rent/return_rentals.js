@@ -25,5 +25,11 @@ Template.rental_detail.events({
                 returned: true
             }
         });
+        books.update(this.bookId, {
+          $inc: { stock: 1 }
+        })
+        clients.update(this.renter, {
+          $inc: { booksOut: -1 }
+        })
     }
 });

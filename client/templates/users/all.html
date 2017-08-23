@@ -3,7 +3,7 @@
     <div class="container">
     {{#each all_users }}
         <div class="column is-3" style="float: left;">
-            <a href="/u/{{_id}}"><div class="box">
+            <a href="/u/v/{{_id}}"><div class="box">
                 <article class="media">
                     <div class="media-left">
                         <figure class="image is-64x64">
@@ -22,6 +22,10 @@
                 </article>
             </div></a>
             </div>
+        {{else}}
+        <div class="column">
+            <p>There are no users in the system currently.</p>
+        </div>
             {{/each}}
         </div>
 </section>

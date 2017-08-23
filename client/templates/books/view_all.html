@@ -42,11 +42,11 @@
                 </div>
             </div>
             </div>
-            
+
             {{#EasySearch.IfInputEmpty index=index }}
                 {{#each all_books }}
                     <div class="column is-3" style="float: left;">
-                        <a href="/b/{{_id}}"><div class="card" style="cursor: pointer;">
+                        <a href="/b/v/{{_id}}"><div class="card" style="cursor: pointer;">
                             <div class="card-image" style="background-image: url('{{cover}}');background-size: cover;background-position: center; ">
                                 <figure class="image is-2by1">
 
@@ -68,7 +68,7 @@
                     </div>
                     {{/each}}
 
-                    
+
             {{else}}
 
             <ol>
@@ -80,7 +80,7 @@
             No Books found
             {{else}}
             {{/EasySearch.IfNoResults}}
-            
+
 
             {{/EasySearch.IfInputEmpty}}
 
@@ -88,18 +88,18 @@
             Searching...
             {{/EasySearch.IfSearching}}
 
-           
 
-                 
-            
-            
+
+
+
+
         </div>
     </section>
 </template>
 
 <template name="user">
     <div class="column is-3" style="float: left;">
-        <a href="/b/{{__originalId}}">
+        <a href="/b/v/{{__originalId}}">
             <div class="card" style="cursor: pointer;">
                 <div class="card-image" style="background-image: url('{{cover}}');background-size: cover;background-position: center; ">
                     <figure class="image is-2by1">
