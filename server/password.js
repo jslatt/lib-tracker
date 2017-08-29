@@ -1,5 +1,5 @@
 Meteor.methods({
-  updatePassword({ id, password }) {
-    Accounts.changePassword(id, password)
+  updatePassword:function(id, password){
+     Accounts.changePassword(id, password);
   }
 });

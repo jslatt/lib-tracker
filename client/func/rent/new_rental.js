@@ -5,9 +5,10 @@ Template.book_detail.events({
         let bookId = Iron.Location.get().path.substring(5,22);
         let user = this.__originalId;
         let role = this.role;
+        let SortDate = new Date();
         let date = moment().format('MMMM Do YYYY');
         let book_name = books.findOne({ _id: bookId }).title;
-        let momentDate = moment().format("YYYYMMD");
+        let momentDate = moment().format('YYYYMMDDhhmma');
 
 
         if (role === "Student") {
@@ -21,6 +22,7 @@ Template.book_detail.events({
             bookId: bookId,
             length: length,
             renter: user,
+            SortDate: SortDate,
             book_name: book_name,
             date: date,
             momentDate: momentDate

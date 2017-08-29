@@ -23,7 +23,7 @@
                                 <p class="title">Recent Rentals</p>
                                 <ul>
                                     {{#each recent_rentals}}
-                                    <li><a href="/r/{{_id}}">{{book_name}}</a></li>
+                                    <li><a href="/r/{{_id}}">{{book_name}} - <span id="momDate{{_id}}"> </span><script>$('#momDate{{_id}}').html(moment("{{momentDate}}", "YYYYMMDDhhmma").fromNow()) </script></a></li>
                                     {{else}}
                                     Nobody has rented a book recently :(
                                     {{/each}}
@@ -48,7 +48,7 @@
                             <p class="title">Reports</p>
                             <p class="subtitle">Here are some common reports generated.</p>
                             <div class="content">
-                                
+
                             </div>
                         </div>
                     </article>
