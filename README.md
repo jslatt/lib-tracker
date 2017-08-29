@@ -19,7 +19,6 @@ Develop a database program to manage the issuance of books at a school library. 
 - [ ] Generate Reports
 - [ ] Create a default user when the system starts up
 - [ ] Change user passwords
-- [ ] Add name on recent rentals
 
 ---
 

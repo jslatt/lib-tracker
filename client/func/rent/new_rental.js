@@ -9,12 +9,9 @@ Template.book_detail.events({
         let date = moment().format('MMMM Do YYYY');
         let book_name = books.findOne({ _id: bookId }).title;
         let momentDate = moment().format('YYYYMMDDhhmma');
+        let length = 30;
 
-
-        if (role === "Student") {
-            let length = 30;
-        }
-        if (role === "Teacher") {
+        if (role == "Teacher") {
             let length = 180;
         }
 

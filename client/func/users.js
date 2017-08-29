@@ -19,10 +19,49 @@ Template.new_user.events({
             fines: fines
         });
 
-        Router.go('/u/all');
+        Router.go('/u');
     }
 
 });
+
+Template.user_detail.events({
+  'click .is-submit' : function () {
+    let FirstName = $('[name="newFname"]').val();
+    let LastName = $('[name="newLname"]').val();
+
+    clients.update(this._id, {
+        $set: {
+            firstName: FirstName,
+            lastName: LastName
+        }
+    });
+
+  },
+  'click .admin-clearFines' : function () {
+    clients.update(this._id, {
+        $set: {
+            fines: 0
+        }
+    });
+  },
+  'click .admin-delU' : function () {
+    clients.remove(this._id);
+    Router.go('/u');
+  },
+  'click .fine' : function () {
+    let amt = $('[name="fineAmt"]').val();
+
+    clients.update(this._id, {
+      $inc: {
+        fines: amt
+      }
+    });
+
+    $('[name="fineAmt"]').val("")
+
+  }
+});
+
 
 Template.users__all.helpers({
     all_users : function () {

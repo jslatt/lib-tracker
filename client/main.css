@@ -17,3 +17,6 @@
 .c_label {
     color: #fafafa !important;
 }
+.cursor .tag {
+  cursor: pointer;
+}

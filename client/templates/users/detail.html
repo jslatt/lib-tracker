@@ -36,6 +36,37 @@
                     </ul>
                 </div>
             </div>
+            <hr/>
+            <div class="columns">
+                <div class="column">
+                  <div class="tags cursor">
+                    <span class="tag is-success admin-editName">Edit Name</span>
+                    <span class="tag is-warning admin-clearFines">Clear Fines</span>
+                    <span class="tag is-danger admin-delU">Delete User</span>
+                  </div>
+                </div>
+            </div>
+            <div class="field has-addons">
+            <div class="control">
+              <input class="input" type="number" name="fineAmt" placeholder="Enter Fine Amount">
+            </div>
+            <div class="control">
+              <a class="button is-danger fine">
+                Fine {{firstName}}
+              </a>
+            </div>
+          </div>
+            <div class="edit-username"></div>
         </div>
+
     </section>
+    <script>
+      $('.admin-editName').click(function() {
+        $('.edit-username').show();
+        $('.edit-username').html('<div class="field has-addons"><div class="control"><input class="input" name="newFname" type="text" placeholder="First"></div><div class="control"><input class="input" name="newLname" type="text" placeholder="Last" /></div><div class="control"><a class="button is-success is-submit">Change Name</a></div></div>');
+        $('.is-submit').click(function() {
+          $('.edit-username').hide();
+        })
+      });
+    </script>
 </template>
