@@ -3,11 +3,11 @@
     "",
     "\\client",
     "\\client\\func",
-    "\\client\\func\\books",
     "\\client\\templates",
-    "\\client\\templates\\users",
-    "\\lib"
+    "\\client\\templates\\rentals",
+    "\\lib",
+    "\\lib\\collections"
   ],
-  "SelectedNode": "\\client\\func\\users.js",
+  "SelectedNode": "\\client\\func\\reports.js",
   "PreviewInSolutionExplorer": false
 }

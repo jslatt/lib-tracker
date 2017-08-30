@@ -1,0 +1,93 @@
+<template name="reports">
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Reports</h1>
+            <h2 class="subtitle">Click on a report to generate it.</h2>
+            <ul>
+                <li><a href="" target="_blank" title="Weekly Summary">Weekly Summary (books rented, most popular book, etc)</a></li>
+                <li><a href="" target="_blank" title="Fines Report">Fines Report (students who have excedded their rent time.)</a></li>
+            </ul>
+        </div>
+    </section>
+</template>
+<template name="report-layout">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Library Tracking Manager</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+
+        {{> yield }}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </body>
+</template>
+<template name="reports_weekly">
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-4">BookTrack</h1>
+            <div class="columns">
+                <div class="column is-6">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
+                <div class="column is-6">
+                    <ul>
+                        <li><strong>Total Books Rented this Week:</strong> 25</li>
+                        <li><strong>Most Popular Book:</strong> "The Grapes of Wrath"</li>
+                        <li><strong>Precent of books rented by Teachers: </strong></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <script>
+        setTimeout(
+            function prepChart() {
+                var ctx = document.getElementById("myChart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                        datasets: [{
+                            label: '# of Votes',
+                            data: [12, 19, 3, 5, 2, 3],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255,99,132,1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            }, 1000);
+
+        prepChart();
+    </script>
+</template>
