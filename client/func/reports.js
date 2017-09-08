@@ -36,5 +36,12 @@ Template.reports_weekly.onRendered(function () {
             }
         }
     });
-    
+
 });
+
+
+
+
+Template.reports_weekly.helpers({
+  
+})
