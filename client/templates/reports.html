@@ -30,64 +30,72 @@
 <template name="reports_weekly">
     <section class="section">
         <div class="container">
-            <h1 class="title is-4">BookTrack</h1>
+            <h1 class="title is-4">BookTrack - Student Report</h1>
             <div class="columns">
-                <div class="column is-6">
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                <div class="column is-4">
+                  <h3 class="subtitle">Late Book Returns</h3>
+                  {{#each books_out }}
+                      <ul>
+                        <li><a href="/r/{{_id}}">{{name}} \\ {{ book_name }} <span class="tag" id="momDate{{_id}}"> </span><script>$('#momDate{{_id}}').html(moment("{{momentDate}}", "YYYYMMDDhhmma").fromNow()) </script></a></li>
+                      </ul>
+                  {{/each}}
                 </div>
-                <div class="column is-6">
-                    <ul>
-                        <li><strong>Total Books Rented this Week:</strong> 25</li>
-                        <li><strong>Most Popular Book:</strong> "The Grapes of Wrath"</li>
-                        <li><strong>Precent of books rented by Teachers: </strong></li>
-                    </ul>
+                <div class="column is-8">
+                    <p class="subtitle">Book Sales Over Last Week</p>
+                    <canvas id="myChart"></canvas>
+
+                    <script>
+       setTimeout(
+           function prepChart() {
+               var ctx = document.getElementById("myChart").getContext('2d');
+               var myChart = new Chart(ctx, {
+                   type: 'bar',
+                   data: {
+                       labels: ["Seven Days Ago", "Six Days Ago", "Five Days Ago", "Four Days Ago", "Three Days Ago", "Two Days Ago", "Yesterday"],
+                       datasets: [{
+                           label: '# of Votes',
+                           data: [{{books_daySix}}, {{books_dayFive}}, {{books_dayFour}}, {{books_dayThree}}, {{books_dayTwo}}, {{books_dayOne}}, {{books_dayZero}}],
+                           backgroundColor: [
+                               'rgba(255, 99, 132, 0.2)',
+                               'rgba(54, 162, 235, 0.2)',
+                               'rgba(255, 206, 86, 0.2)',
+                               'rgba(75, 192, 192, 0.2)',
+                               'rgba(153, 102, 255, 0.2)',
+                               'rgba(255, 159, 64, 0.2)',
+                               'rgba(255, 87, 32, 0.2)'
+                           ],
+                           borderColor: [
+                               'rgba(255,99,132,1)',
+                               'rgba(54, 162, 235, 1)',
+                               'rgba(255, 206, 86, 1)',
+                               'rgba(75, 192, 192, 1)',
+                               'rgba(153, 102, 255, 1)',
+                               'rgba(255, 159, 64, 1)',
+                               'rgba(255, 87, 32, 1)'
+                           ],
+                           borderWidth: 1
+                       }]
+                   },
+                   options: {
+                       scales: {
+                           yAxes: [{
+                               ticks: {
+                                   beginAtZero: true
+                               }
+                           }]
+                       }
+                   }
+               });
+           }, 1000);
+
+       prepChart();
+   </script>
+
+
+
                 </div>
-                
+
             </div>
         </div>
     </section>
-    <script>
-        setTimeout(
-            function prepChart() {
-                var ctx = document.getElementById("myChart").getContext('2d');
-                var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-                        datasets: [{
-                            label: '# of Votes',
-                            data: [12, 19, 3, 5, 2, 3],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
-            }, 1000);
-
-        prepChart();
-    </script>
 </template>
