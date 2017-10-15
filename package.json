@@ -9,5 +9,8 @@
     "bcrypt": "^1.0.3",
     "meteor-node-stubs": "~0.2.4",
     "simpl-schema": "^0.3.2"
+  },
+  "devDependencies": {
+    "bcrypt": "^1.0.3"
   }
 }
