@@ -20,3 +20,15 @@
 .cursor .tag {
   cursor: pointer;
 }
+
+.msg_post {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px;
+  border: 0px;
+  position:absolute;
+  bottom:10px;
+  border-radius: 5px;
+}

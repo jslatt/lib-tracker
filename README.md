@@ -14,10 +14,13 @@ Develop a database program to manage the issuance of books at a school library. 
 ---
 
 ### To Do's
-- [ ] Localize Bluma CSS & FA Icons & jQuery
+- [ ] Electron
 - [ ] Edit Users
-- [ ] Generate Reports
-- [ ] Create a default user when the system starts up
+- [ ] Generate Report
+- [ ] Host
+- [ ] Message Board
+- [ ] Cron to Check for Rentals +30 days that have not been fined (run every 24 hrs)
+- [ ] Differ between student / teacher
 - [ ] Change user passwords
 
 ---
