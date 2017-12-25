@@ -12,7 +12,7 @@ Template.book_detail.events({
         let length = 30;
 
         if (this.role == "Teacher") {
-            let length = 180;
+            length = 180;
         }
 
         rentals.insert({
