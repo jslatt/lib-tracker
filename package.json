@@ -11,6 +11,7 @@
     "simpl-schema": "^0.3.2"
   },
   "devDependencies": {
-    "bcrypt": "^1.0.3"
+    "bcrypt": "^1.0.3",
+    "electrify": "^2.1.4"
   }
 }
