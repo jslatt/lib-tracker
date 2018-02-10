@@ -62,6 +62,7 @@ launch-screen@1.1.1
 livedata@1.0.18
 localstorage@1.1.1
 logging@1.1.17
+markdown@1.0.12
 meteor@1.7.1
 meteor-base@1.1.0
 meteortoys:allthings@4.0.0
