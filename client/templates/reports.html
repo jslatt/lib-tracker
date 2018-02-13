@@ -30,6 +30,8 @@
 <template name="reports_weekly">
     <section class="section">
         <div class="container">
+            <a href="/"><span class="tag is-light">Go Back!</span></a><a href="/">&nbsp;&nbsp;<span class="tag is-primary print">Print</span></a>
+            <br/>
             <h1 class="title is-4">BookTrack - Student Report</h1>
             <div class="columns">
                 <div class="column is-4">
@@ -56,5 +58,11 @@
 
             </div>
         </div>
+        <script>
+          $('.print').click(function() {
+            $('.tag').hide();
+            window.print();
+          })
+        </script>
     </section>
 </template>
